@@ -2,18 +2,28 @@
     <head>
         <!-- Comentário em html-->
         <title>Meu primeiro html</title>
+        <style>
+            img{width: 700px; height: 100; border-radius: 90%;}
+            p{color: red;}
+            ul{background-color: aquamarine;}
+            ol{background-color: coral;}
+            table, td{border: solid black;
+            border-collapse: collapse;}
+        </style>
+    </head>
+    <body>
         <h1>Título de nível 1</h1>
         <h2>Título de nível 2</h2>
         <h3>Título de nível 3</h3>
         <h4>Título de nível 4</h4>
         <h5>Título de nível 5</h5>
         <h6>Título de nível 6</h6>
-        <img src="https://dad.puc-rio.br/wp-content/uploads/2018/04/Flamengo1.png" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB33s65bIvPKxgWd9Wn_RuKgjRFr6gb_9CPQ&s" alt="">
         <p>Parágrafo para o título 1</p>
         <span>Um pouco de texto.</span>
         <span><b>Continuação</b> do <strong>texto</strong> e mais texto de
             novo</span>
-        <ul>
+        <ol>
             <li>git init - cria um repositório git</li>
             <li>git add - adiciona as modificações feitas para commit</li>
             <li>git log - mostra todos os commits feitos na branch atual.
@@ -30,9 +40,47 @@
             <li>git "cmd" TAB - Lista os comandos disponíveis para este cmd</li>
             <li>git remote - mostra os repositórios remotos disponíveis(caso
                 tenha algum)</li>
+        </ol>
+        <ul>
+            <li>primeiro</li>
+            <li>segundo</li>
         </ul>
-    </head>
-    <body>
+        <h1>tags de formatacao</h1>
+        <p>Lorem <strong>ipsum</strong> dolor <sup>sit</sup> amet <em>consectetur</em>, adipisicing <sub>elit</sub> . Eum deserunt voluptate <mark><em>aura</em><sup>2</sup></mark> <br>incidunt ab magnam esse, natus illo ex cumque, sit, error nobis illum nihil eligendi? Fugiat incidunt laborum eum?</p>
+        <a target="_blank" href="https://www.flamengo.com.br/">
+             <p>farmadores de aura</p>
+        </a>
+        <img src="./aura.png" alt="aura">
 
+        <h1>tabelas</h1>
+        <table>
+            <th>
+                oi 
+            </th>
+            <th>
+                aura
+            </th>
+            <th>
+                eu 
+            </th>
+            <tr>
+                <td>oi</td>
+                <td>aura</td>
+                <td>ego</td>
+            </tr>
+            <tr>
+                <td>eu</td>
+                <td>tenho</td>
+                <td>aura</td>
+            </tr>
+        </table>
+        <h1>formulario</h1>
+        <form action="https://google.com/search">
+            <label for="q">
+                oi tudo bem
+            </label>
+            <input id="q" type="text">
+            <input type="submit">
+        </form>
     </body>
 </html>
