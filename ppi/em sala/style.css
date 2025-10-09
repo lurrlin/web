@@ -1,0 +1,30 @@
+ img {
+            width: 700px;
+            height: 100;
+            border-radius: 90%;
+        }
+
+        p {
+            color: red;
+        }
+
+        ul {
+            background-color: aquamarine;
+            padding: 20px;
+        }
+
+        ol {
+            background-color: coral;
+        }
+
+        table,
+        td, tr, th {
+            border:  1px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+        body{
+            background-image: url(https://yt3.googleusercontent.com/p-lbVutCzOzpPvdVF3S6vymnKS5gi7gqemuBg1IdFE3_Nda3WXMYH6U6_IhGxdu2jemaaDhYPQ=s900-c-k-c0x00ffffff-no-rj);
+            background-position: center; 
+            background-repeat: no-repeat;
+        }

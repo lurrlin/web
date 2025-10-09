@@ -3,31 +3,7 @@
     <head>
         <!-- Comentário em html-->
         <title>flamengo</title>
-        <style>
-        img {
-            width: 700px;
-            height: 100;
-            border-radius: 90%;
-        }
-
-        p {
-            color: red;
-        }
-
-        ul {
-            background-color: aquamarine;
-        }
-
-        ol {
-            background-color: coral;
-        }
-
-        table,
-        td {
-            border: solid black;
-            border-collapse: collapse;
-        }
-    </style>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -102,13 +78,26 @@
                 <td>aura</td>
             </tr>
         </table>
+
+        <a target="_blank" href="https://www.google.com/search?q=flameng"></a>
+        <p>flamengo</p>
         <h1>formulario</h1>
-        <form target="_blank" action="https://google.com/search">
+
+        <form target="_blank" action="https://google.com/search?q=">
             <label for="q">
                 oi tudo bem
             </label>
-            <input id="q" type="text">
-            <input type="submit">
+            <input id="q" name="q" type="text" placeholder="escreve ai"
+                draggable="true">
+            <input type="submit" value="aaaaaaa">
+        </form>
+
+        <form target="_blank" action="https://google.com/search?q=">
+            <label for="q">
+                escolhe a cor ai otario
+            </label>
+            <input id="q" name="q" type="color" draggable="true">
+            <input type="submit" value="cor legal">
         </form>
     </body>
 
