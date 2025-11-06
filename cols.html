@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <!-- Metadados básicos -->
+  <meta charset="utf-8"> <!-- codificação -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- responsividade -->
+  <meta name="description" content="Resumo de HTML e CSS para estudo"> <!-- descrição -->
+  <meta name="keywords" content="html, css, estudo, resumo"> <!-- palavras-chave -->
+  <title>Resumo de HTML & CSS (para estudo)</title>
+
+  <!-- Exemplo de link para ícone (favicon) -->
+  <link rel="icon" href="#" /> <!-- substituir pelo caminho do favicon -->
+
+  <!-- Estilos embutidos com muitos exemplos de propriedades e comentários -->
+  <style>
+    /* Variáveis CSS (custom properties) */
+    :root {
+      --accent: #1e90ff;
+      --muted: #6c757d;
+      --bg: #f8f9fa;
+      --max-width: 1100px;
+      --radius: 8px;
+    }
+
+    /* Reset simples e box-sizing */
+    /* box-sizing: controla como largura/altura são calculadas */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Estilizando o body */
+    body {
+      margin: 0; /* remove margem padrão */
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg), #fff);
+      color: #222;
+      line-height: 1.5; /* espaço entre linhas */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container centralizado com largura máxima e padding */
+    .container {
+      max-width: var(--max-width);
+      margin: 2rem auto; /* centraliza horizontalmente */
+      padding: 1rem;
+    }
+
+    /* Layout com grid para conteúdo principal e lateral */
+    .layout {
+      display: grid; /* grid layout */
+      grid-template-columns: 1fr 320px; /* 2 colunas: conteúdo + sidebar */
+      gap: 1rem;
+      align-items: start;
+    }
+
+    header.site-header {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* Logo simples com imagem e texto */
+    .logo img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover; /* como a imagem preenche o box */
+      border-radius: 6px;
+    }
+
+    /* Navegação horizontal */
+    nav.main-nav ul {
+      list-style: none; /* remove marcadores */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 0.75rem;
+    }
+    nav.main-nav a {
+      text-decoration: none; /* remove underline */
+      color: var(--muted);
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+    }
+    nav.main-nav a:hover,
+    nav.main-nav a:focus {
+      background: rgba(30,144,255,0.08);
+      color: var(--accent);
+    }
+
+    /* Cartões de conteúdo */
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: var(--radius);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    /* Títulos e tipografia */
+    h1, h2, h3 {
+      margin: 0 0 0.5rem 0;
+      line-height: 1.2;
+    }
+    p { margin: 0 0 0.75rem 0; }
+
+    /* Tabela: border-collapse e estilos */
+    table {
+      width: 100%;
+      border-collapse: collapse; /* bordas coladas */
+    }
+    table th, table td {
+      padding: 0.5rem;
+      border: 1px solid #e9ecef;
+      text-align: left;
+    }
+    table thead th {
+      background: #f1f3f5;
+    }
+
+    /* Formularios: display, focus, placeholders */
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      background: #fff;
+      transition: border-color .15s ease, box-shadow .15s ease; /* transição suave */
+    }
+    form input:focus,
+    form textarea:focus,
+    form select:focus {
+      outline: none; /* remove outline padrão */
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(30,144,255,0.08);
+    }
+    label { display: block; margin-bottom: 0.25rem; font-weight: 600; }
+
+    /* Flexbox exemplos */
+    .row { display: flex; gap: 0.5rem; align-items: center; }
+    .col { flex: 1; }
+
+    /* Pseudo-classes e pseudo-elementos */
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 0.8rem;
+    }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+
+    /* Exemplo de responsividade (media query) */
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; } /* empilha em dispositivos pequenos */
+    }
+
+    /* Exemplo de animação simples */
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.02); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .pulse { animation: pulse 3s infinite; }
+
+    /* Utilitários */
+    .text-center { text-align: center; }
+    .small { font-size: .85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Cabeçalho com marca e navegação -->
+    <header class="site-header" role="banner">
+      <div class="logo" aria-hidden="false">
+        <!-- imagem com atributos alt e loading -->
+        <img src="#" alt="Logo exemplo" width="48" height="48" loading="lazy">
+      </div>
+      <div>
+        <h1 style="margin:0;font-size:1.25rem;">Resumo de HTML & CSS</h1>
+        <div class="small">Uso: apenas para estudar — não use durante avaliações.</div>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Menu principal" style="margin-left:auto;">
+        <ul>
+          <li><a href="#estrutura">Estrutura</a></li>
+          <li><a href="#tags">Tags</a></li>
+          <li><a href="#css">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="layout" role="main">
+      <!-- Conteúdo principal: elementos e explicações -->
+      <section class="card" aria-labelledby="estrutura">
+        <h2 id="estrutura">1. Estrutura básica do HTML</h2>
+        <!-- Comentários explicativos -->
+        <!-- <!doctype html> declara o tipo de documento -->
+        <!-- <html lang=""> define o idioma do documento -->
+        <p>Documento HTML começa com <code>&lt;!doctype html&gt;</code> e contém as seções <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>.</p>
+
+        <h3>Elementos comuns</h3>
+        <ul>
+          <li><strong>&lt;h1&gt;…&lt;/h1&gt;</strong> a <strong>&lt;h6&gt;</strong> — títulos hierárquicos.</li>
+          <li><strong>&lt;p&gt;</strong> — parágrafos.</li>
+          <li><strong>&lt;a href=""&gt;</strong> — link; atributos: <code>href</code>, <code>target</code>, <code>rel</code>.</li>
+          <li><strong>&lt;img src="" alt=""&gt;</strong> — imagem; atributos: <code>src</code>, <code>alt</code>, <code>width</code>, <code>height</code>, <code>loading</code>.</li>
+          <li><strong>&lt;ul&gt;/&lt;ol&gt;/&lt;li&gt;</strong> — listas não ordenadas/ordenadas.</li>
+          <li><strong>&lt;table&gt;</strong> — tabelas com <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>.</li>
+          <li><strong>&lt;form&gt;</strong> — formulários com <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;button&gt;</code>.</li>
+        </ul>
+
+        <h3>Semântica HTML</h3>
+        <p>Use tags semânticas: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>. Isso melhora acessibilidade e SEO.</p>
+
+        <h3>Formulários (exemplo rápido)</h3>
+        <form aria-label="Exemplo de formulário">
+          <fieldset>
+            <legend>Contato</legend>
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="nome@exemplo.com">
+
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem"></textarea>
+
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto">
+              <option value="duvida">Dúvida</option>
+              <option value="sugestao">Sugestão</option>
+            </select>
+
+            <div style="margin-top:0.75rem;">
+              <button type="submit">Enviar</button>
+              <button type="reset" aria-label="Limpar formulário">Limpar</button>
+            </div>
+          </fieldset>
+        </form>
+
+        <h3 id="tags">2. Exemplos de tags HTML importantes</h3>
+        <dl>
+          <dt>&lt;figure&gt; + &lt;figcaption&gt;</dt>
+          <dd>Usados para imagens com legenda.</dd>
+          <dt>&lt;audio&gt; &lt;video&gt;</dt>
+          <dd>Tags para mídia com controles nativos (atributo <code>controls</code>).</dd>
+          <dt>&lt;canvas&gt;</dt>
+          <dd>Área de desenho via JavaScript.</dd>
+          <dt>&lt;svg&gt;</dt>
+          <dd>Gráficos vetoriais escaláveis.</dd>
+          <dt>ARIA attributes</dt>
+          <dd>Use <code>role</code>, <code>aria-label</code>, etc. para acessibilidade.</dd>
+        </dl>
+
+        <h3>Exemplo de tabela</h3>
+        <table>
+          <thead>
+            <tr><th>Propriedade</th><th>Descrição</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>id</td><td>Identificador único do elemento</td></tr>
+            <tr><td>class</td><td>Classe para estilização e seleção</td></tr>
+            <tr><td>data-*</td><td>Atributos personalizados (data attributes)</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Exemplo de mídia</h3>
+        <!-- áudio e vídeo com controles -->
+        <audio controls>
+          <source src="#" type="audio/mpeg">
+          Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <video controls width="320">
+          <source src="#" type="video/mp4">
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+      </section>
+
+      <!-- Sidebar com resumo rápido de CSS -->
+      <aside class="card">
+        <h2 id="css">3. CSS — propriedades e exemplos</h2>
+
+        <p class="muted">Abaixo há exemplos e comentários sobre as propriedades CSS mais usadas.</p>
+
+        <h3>Seletores (exemplos)</h3>
+        <ul>
+          <li>Elemento: <code>p { ... }</code></li>
+          <li>Classe: <code>.classe { ... }</code></li>
+          <li>ID: <code>#id { ... }</code></li>
+          <li>Descendente: <code>.pai .filho { ... }</code></li>
+          <li>Filho direto: <code>.pai &gt; .filho { ... }</code></li>
+          <li>Atributo: <code>a[target="_blank"] { ... }</code></li>
+          <li>Pseudo-classes: <code>a:hover</code>, <code>input:focus</code></li>
+          <li>Pseudo-elementos: <code>p::before</code>, <code>p::after</code></li>
+        </ul>
+
+        <h3>Layout</h3>
+        <p><strong>Flexbox</strong>: <code>display:flex</code>, <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>gap</code>.</p>
+        <p><strong>Grid</strong>: <code>display:grid</code>, <code>grid-template-columns</code>, <code>grid-template-rows</code>, <code>gap</code>.</p>
+
+        <h3>Box model</h3>
+        <p>Propriedades: <code>width</code>, <code>height</code>, <code>padding</code>, <code>border</code>, <code>margin</code>, <code>box-sizing</code>. Lembre-se que padding e border afetam o tamanho se box-sizing for <code>content-box</code>.</p>
+
+        <h3>Tipografia</h3>
+        <p>Propriedades: <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, <code>line-height</code>, <code>letter-spacing</code>, <code>text-align</code>, <code>text-decoration</code>, <code>text-transform</code>.</p>
+
+        <h3>Efeitos visuais</h3>
+        <p>Propriedades: <code>background</code>, <code>border-radius</code>, <code>box-shadow</code>, <code>opacity</code>, <code>filter</code>, <code>transform</code>, <code>transition</code>, <code>animation</code>.</p>
+
+        <h3>Outros utilitários</h3>
+        <ul>
+          <li><code>overflow</code>, <code>white-space</code>, <code>text-overflow</code></li>
+          <li><code>position</code>: static, relative, absolute, fixed, sticky</li>
+          <li><code>z-index</code> para empilhamento</li>
+          <li><code>cursor</code>, <code>pointer-events</code></li>
+        </ul>
+
+        <h3>Exemplo rápido (classe)</h3>
+        <pre style="white-space:pre-wrap;background:#f1f3f5;padding:.5rem;border-radius:6px;">
+/* botão de destaque */
+.btn-destaque {
+  background: var(--accent);
+  color: white;
+  padding: .6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+        </pre>
+
+        <div class="text-center small" style="margin-top:1rem;">
+          <span class="badge">Dica</span>
+          <div>Pratique criando pequenas páginas e inspecione com as ferramentas do navegador.</div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="card" style="margin-top:1rem;">
+      <div class="row">
+        <div class="col">
+          <p class="small">Resumo gerado para estudo — não usar durante avaliações. Contém exemplos de: atributos HTML (id, class, data-*, title, lang, draggable, hidden, contenteditable, tabindex), e muitas propriedades CSS.</p>
+        </div>
+        <div class="col text-center">
+          <small class="muted">Última revisão: 2025</small>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Exemplo de script com comentários -->
+  <script>
+    // Este script demonstra manipulação básica do DOM
+    // Não é necessário, mas serve como referência para estudar JS integrado ao HTML
+    (function () {
+      // 'document.querySelector' seleciona o primeiro elemento que corresponde ao seletor CSS
+      var anchor = document.querySelector('nav.main-nav a');
+      if (anchor) {
+        // 'title' é um atributo que aparece ao pairar sobre o elemento
+        anchor.title = "Ir para seção Estrutura";
+      }
+
+      // Exemplo de criação de elemento dinâmico
+      var badge = document.createElement('span');
+      badge.className = 'badge';
+      badge.textContent = 'Exemplo JS';
+      // anexar ao footer
+      var footer = document.querySelector('footer');
+      if (footer) footer.appendChild(badge);
+    })();
+  </script>
+</body>
+</html>
