@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>França</title>
+    <style>
+        html, body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+
+        .faixa{
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #faixa1{
+            background-color: rgb(38, 0, 255);
+        }
+
+        #faixa2{
+            background-color: rgb(255, 255, 255);
+        }
+
+        #faixa3{
+            background-color: rgb(255, 0, 0);
+        }
+        
+    </style>
+</head>
+<body class="container">
+        <div class="faixa" id="faixa1"></div>
+        <div class="faixa" id="faixa2"></div>
+        <div class="faixa" id="faixa3"></div>
+</body>
+</html>
