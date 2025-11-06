@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regra CSS</title>
+
+    <style>
+        body{
+            background-color: aliceblue;
+            font-family: arial;
+        }
+
+        #Fla button {
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            background-color: rgb(235, 38, 38);
+            padding: .6rem 1rem;
+            transition: all 0.7s ease;
+        }
+
+        #Fla button:hover{
+            transform: scale(1.2);
+            color: white;
+            background-color: black;
+        }
+
+        #Pal button {
+            color: rgb(255, 255, 255);
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            background-color: rgb(14, 122, 32);
+            padding: .6rem 1rem;
+            transition: all 0.7s ease;
+        }
+
+        #Pal button::after{
+            content: "🐷";
+        }
+
+        .centro{
+            display: flex;
+            justify-content: center;
+        }
+
+        .box{
+            background-color: #e2d9d9;
+            width: 100px;
+            height: 100px;
+            border: 20px solid #141414;
+            border-top-color: red;
+            border-bottom-color: white ;
+            border-radius: 50%;
+            animation: rotacao 4s linear infinite;
+        }
+        @keyframes rotacao{
+            0%{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div>
+        <h1>Regras CSS</h1>
+    </div>
+
+    <div>
+        <p>Uma Regra css é uma regra para certos pedaços do documento, as quais todas as partes do documento que satisfazem as necessidades vão seguir essas regras. Regras essa que são defininadas no <strong><em>&lt;style></em></strong>  dentro do <strong><em>&lt;head></em></strong>.  </p>
+    </div>
+
+    <div>
+        <p>Uma regra CSS é composta por 3 partes: <em>Seletor, Propriedades e Valores</em></p>
+    </div>
+
+    <div>
+        <ul>
+            <li>Seletor - É qual parte do documento deve seguir as regras. ex: "body", que faz o corpo do texto seguir as regras propostas.</li>
+            <br>
+
+            <li>Propriedades - É onde você vai definir as regras. Ex: "background-color:" faz o fundo da pagina ficar com outra cor (Definida pelos <em>valores</em>)." </li>
+            <br>
+
+            <li>Valores - É oque define a propriedade no exemplo que estamos usando é background-color: "aliceblue; que faz o fundo da pagina ficar com o azul claro que está vendo."</li>
+        </ul>
+    </div>
+
+    <div>
+        <p><strong><em>PseudoClasse :hover</em></strong></p>
+
+        <p>É um seletor que quando você passa o mouse pelo botão ele aplica um conjunto de regras diferente. Ex:</p>
+    </div>
+    
+    <div id="Fla">
+       <button>Flamengo</button> 
+    </div>
+
+    <div>
+        <p><strong><em>PseudoElemento ::after</em></strong></p>
+
+        <p>Adiciona um pequeno elemento após o texto no seguinte exemplo:</p>
+    </div>
+
+    <div id="Pal">
+        <button>Palmeiras</button>
+    </div>
+
+    <div>
+        <p><strong><em>Animação</em></strong></p>
+
+        <p>Faz uma animação usando <em>keyframes</em></p>
+    </div>
+
+    <div class="box"></div>
+    
+</body>
+</html>
