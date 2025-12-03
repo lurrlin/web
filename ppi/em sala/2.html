@@ -3,115 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aura mais ego</title>
+    <title>Document</title>
     <style>
         body{
-            font-family:  arial, sans-serif;
-            background-color: aliceblue;
-        }
-
-        table, td, tr{
-            border: 1px solid black;
-            border-collapse: collapse;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-    <h1>Formulario</h1>
-    <p>a tag &lt;form> faz um bloco que da pra colocar informacao com o input 
-        e receber em algum luga como um link
-    </p>
-    <p style="font-style: italic;">exemplo de codigo</p>
-    <pre style="color: green;">
-        &lt;form target="_blank"  action="google.com/search?q=">
-        &ltlabel for="q">
-                Digite sua pesquisa
-            &lt;/label>
-            &lt;input id="q" name="q" type="text" placeholder="Digite...."
-                draggable="true">
-            &lt;input type="submit" value="Pesquisar">
-    </pre>
-    <p>esse trecho de codigo resulta no botao</p>
-    <form target="_blank" action="https://google.com/search?q=">
-        <label for="q">
-                Digite sua pesquisa
-        </label>
-            <input id="q" name="q" type="text" placeholder="Digite...."
-                draggable="true">
-            <input type="submit" value="Pesquisar">
-    </form>
-    <br>
-    <hr>
-    <br>
-    <h1>Tabelas</h1>
-    <p>voce cria uma tabela com a tag &lt;table>, cria as linhas com o &lt;tr> e as colunas com o &lt;td></p>
-    <p style="font-style: italic;">exemplo de codigo</p>
-    <pre style="color: green;">
-        &lt;table>
-        &lt;tr>
-            &lt;td rowspan="3">CARNE&lt;/td>
-            &lt;td colspan="2">ITEM&lt;/td>
-            &lt;td>QUANTIDADE&lt;/td>
-            &lt;td>PREÇO&lt;/td>
-        &lt;/tr>
-         &lt;tr>
-            &lt;td colspan="2">ALCATRA&lt;/td>
-            &lt;td>3KG&lt;/td>
-            &lt;td>R$500&lt;/td>
-        &lt;/tr>
-        &lt;tr>
-            &lt;td colspan="2">MIGNON&lt;/td>
-            &lt;td>5KG&lt;/td>
-            &lt;td>R$999&lt;/td>
-        &lt;/tr>
-        &lt;tr>
-            &lt;td rowspan="2">BEBIDAS&lt;/td>
-            &lt;td colspan="2">CACHAÇA&lt;/td>
-            &lt;td>3L&lt;/td>
-            &lt;td>R$200&lt;/td>
-        &lt;/tr>
-        &lt;tr>
-            &lt;td colspan="2">CERVEJA&lt;/td>
-            &lt;td>12L&lt;/td>
-            &lt;td>R$450&lt;/td>
-        &lt;/tr>
-    &lt;/table>
-    </pre>
-
-    <p>cria a seguinte tabela</p>
-
-    <table>
-        <tr>
-            <td rowspan="3">CARNE</td>
-            <td colspan="2">ITEM</td>
-            <td>QUANTIDADE</td>
-            <td>PREÇO</td>
-        </tr>
-         <tr>
-            <td colspan="2">ALCATRA</td>
-            <td>3KG</td>
-            <td>R$500</td>
-        </tr>
-        <tr>
-            <td colspan="2">MIGNON</td>
-            <td>5KG</td>
-            <td>R$999</td>
-        </tr>
-        <tr>
-            <td rowspan="2">BEBIDAS</td>
-            <td colspan="2">CACHAÇA</td>
-            <td>3L</td>
-            <td>R$200</td>
-        </tr>
-        <tr>
-            <td colspan="2">CERVEJA</td>
-            <td>12L</td>
-            <td>R$450</td>
-        </tr>
-    </table>
-    <br>
-    <hr>
-    <br>
-    <iframe src="https://sigaa.ifsc.edu.br/sigaa/public/home.jsf" frameborder="0" width="100%" height="800px"></iframe>
+    <button id="pfft">aura</button>
+    <script>
+        let b=document.querySelector("button")
+        let contador=0;
+        b.style.width="200px"
+        b.style.height="200px"
+        b.addEventListener("click", ()=>{
+            contador++
+            b.innerHTML=contador
+        })
+        
+    </script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>random</button>
+    <div></div>
+    <!--se for prompt tem que tratar com number.parseint()-->
+    <script>
+        b=document.body.querySelector("button")
+        div=document.body.querySelector("div")
+        b.addEventListener("click", ()=>{
+            let rand=Math.random();
+            let min=50
+            let max=90
+            random=(rand*(max-min))+min;
+            console.log(random)
+            div.innerHTML=random
+        })
+    </script>
+</body>
+</html>
