@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barquinho simples</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(#86c5ff 60%, #3aa0e0 60%);
+        overflow: hidden;
+        font-family: sans-serif;
+    }
+    
+    .mar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40vh;
+        background: linear-gradient(#3aa0e0, #1673b5);
+    }
+
+    .barquinho {
+        position: absolute;
+        bottom: 38vh; 
+        right: -200px;
+        width: 160px;
+        height: auto;
+        animation: navegar 12s linear infinite, balanco 2.5s ease-in-out infinite;
+    }
+
+    @keyframes navegar {
+        0%   { right: -200px; }
+        100% { right: 110vw; }
+    }
+
+    @keyframes balanco {
+        0%,100% { transform: rotate(-2deg) }
+        50%     { transform: rotate(2deg) }
+    }
+</style>
+</head>
+<body>
+    <img class="barquinho" src="https://www.pikpng.com/pngl/b/226-2266855_rope-clipart-sailor-quadro-infantil-barco-png-download.png" alt="Barquinho">
+
+    <div class="mar"></div>
+</body>
+</html>
