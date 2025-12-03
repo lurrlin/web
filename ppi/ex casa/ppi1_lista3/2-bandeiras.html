@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .bandeira { width: 300px; height: 200px; border: 1px solid #000; margin-bottom: 20px; position: relative; background: white; }
+        
+        #japao.bandeira { display: flex; justify-content: center; align-items: center; }
+        #japao.bandeira > div.circulo { width: 100px; height: 100px; background: red; border-radius: 50%; }
+
+        #alemanha.bandeira div { width: 100%; height: 33.33%; }
+        .preto { background: black; } .vermelho { background: red; } .amarelo { background: gold; }
+
+        #holanda.bandeira div { width: 100%; height: 33.33%; }
+        .azul { background: darkblue; } .branco { background: white; }
+
+        #italia.bandeira { display: flex; }
+        #italia.bandeira div { width: 33.33%; height: 100%; }
+        .verde { background: green; }
+
+        #brasil.bandeira { background: green; display: flex; justify-content: center; align-items: center; }
+        .losango { width: 200px; height: 200px; background: yellow; transform: rotate(45deg) scale(0.7); display: flex; justify-content: center; align-items: center; }
+        .circulo-br { width: 100px; height: 100px; background: blue; border-radius: 50%; transform: rotate(-45deg); /* Desvira o circulo se tiver algo dentro */ }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#japao">Japão</a> | <a href="#alemanha">Alemanha</a> | 
+        <a href="#holanda">Holanda</a> | <a href="#italia">Itália</a> | <a href="#brasil">Brasil</a>
+    </nav>
+    <hr>
+
+    <div id="japao" class="bandeira"><div class="circulo"></div></div>
+
+    <div id="alemanha" class="bandeira"><div class="preto"></div><div class="vermelho"></div><div class="amarelo"></div></div>
+
+    <div id="holanda" class="bandeira"><div class="vermelho"></div><div class="branco"></div><div class="azul"></div></div>
+
+    <div id="italia" class="bandeira"><div class="verde"></div><div class="branco"></div><div class="vermelho"></div></div>
+
+    <div id="brasil" class="bandeira"><div class="losango"><div class="circulo-br"></div></div></div>
+</body>
+</html>

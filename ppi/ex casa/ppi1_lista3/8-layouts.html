@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8 - Layout Exato</title>
+    <style>
+        /* Reset e Base */
+        body { margin: 0; padding: 20px; font-family: sans-serif; background-color: #eee; }
+
+        /* GRID CONTAINER (Desktop) */
+        .container {
+            display: grid;
+            height: 600px;
+            gap: 10px;
+            
+            /* 4 Colunas:
+               1. Sidebar (60px)
+               2. Conteúdo Esq (Maior - 1.5fr)
+               3. Conteúdo Meio (1fr)
+               4. Lateral Dir (1fr) 
+            */
+            grid-template-columns: 60px 1.5fr 1fr 1fr;
+            
+            /* 3 Linhas */
+            grid-template-rows: 1fr 1.5fr 1fr;
+
+            /* O MAPA MÁGICO DO LAYOUT */
+            grid-template-areas:
+                "side  header header orange"
+                "side  pink   teal   orange"
+                "side  salmon green  green";
+        }
+
+        /* Classes das Áreas (Cores copiadas da imagem) */
+        .side   { grid-area: side; background: white; display: flex; flex-direction: column; align-items: center; padding-top: 15px; gap: 8px; border-radius: 5px; }
+        .header { grid-area: header; background: #b0c4de; border-radius: 5px; } /* Azul acinzentado */
+        .orange { grid-area: orange; background: #f39c12; border-radius: 5px; } /* Laranja */
+        .pink   { grid-area: pink;   background: #e6b0aa; border-radius: 5px; } /* Rosa */
+        .teal   { grid-area: teal;   background: #d1f2eb; border-radius: 5px; } /* Verde Água */
+        .salmon { grid-area: salmon; background: #f5b7b1; border-radius: 5px; } /* Salmão */
+        .green  { grid-area: green;  background: #a9dfbf; border-radius: 5px; } /* Verde Rodapé */
+
+        /* Bolinhas da Sidebar */
+        .dot { width: 18px; height: 18px; border-radius: 50%; }
+
+        /* RESPONSIVIDADE (< 500px) */
+        @media screen and (max-width: 500px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+            }
+            .container > div { min-height: 100px; }
+            .side { flex-direction: row; justify-content: center; padding: 10px; min-height: 50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="side">
+            <div class="dot" style="background: #e67e22;"></div>
+            <div class="dot" style="background: #aab7b8;"></div>
+            <div class="dot" style="background: #d7bde2;"></div>
+            <div class="dot" style="background: #d35400;"></div>
+        </div>
+
+        <div class="header"></div> <div class="orange"></div> <div class="pink"></div>   <div class="teal"></div>   <div class="salmon"></div> <div class="green"></div>  </div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f0f0; margin: 0; padding: 20px; padding-bottom: 80px; }
+        .container {
+            max-width: 400px; background: white; margin: 0 auto; padding: 20px; border: 1px solid #ccc; overflow: hidden; position: relative; min-height: 500px;
+        }
+        
+        .mensagem {
+            clear: both; margin-bottom: 15px; overflow: hidden;
+        }
+        .balao {
+            padding: 10px; border-radius: 10px; max-width: 70%; position: relative;
+        }
+        .avatar {
+            width: 40px; height: 40px; border-radius: 50%; background-color: #ccc;
+        }
+
+        .pedro .avatar {
+            float: left; margin-right: 10px; background-color: #3498db;
+        }
+        .pedro .balao {
+            float: left; background-color: #fff; border: 1px solid #ddd;
+        }
+
+        .eu .avatar {
+            float: right; margin-left: 10px; background-color: #2ecc71;
+        }
+        .eu .balao {
+            float: right; background-color: #dcf8c6; border: 1px solid #c3e6cb;
+        }
+
+        .input-area {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background: #eee; box-sizing: border-box; border-top: 1px solid #ccc; 
+        }
+        .input-area input {
+            width: 75%; padding: 5px; 
+        }
+        .input-area button {
+            width: 20%; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mensagem pedro">
+            <div class="avatar"></div>
+            <div class="balao">fala tu fxp <br><small>00:30</small></div>
+        </div>
+
+        <div class="mensagem eu">
+            <div class="avatar"></div>
+            <div class="balao">fala cmg cpx<br><small>00:35</small></div>
+        </div>
+
+        <div class="mensagem pedro">
+            <div class="avatar"></div>
+            <div class="balao">fez as atividades?<br><small>01:01</small></div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" placeholder="Digite sua mensagem">
+            <button>Enviar</button>
+        </div>
+    </div>
+</body>
+</html>

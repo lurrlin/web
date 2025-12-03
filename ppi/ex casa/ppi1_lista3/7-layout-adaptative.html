@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; color: #333; text-align: center; }
+        
+        .container {
+            display: grid;
+            min-height: 100vh;
+            grid-template-areas: 
+                "header header header"
+                "banner banner banner"
+                "left main right"
+                "left low right"
+                "footer footer footer";
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-rows: 
+                80px    
+                100px  
+                1fr     
+                80px 
+                60px;  
+            gap: 5px;
+            padding: 5px;
+        }
+
+        .container > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .header { grid-area: header; background: #f1c40f; }
+        .banner { grid-area: banner; background: #e74c3c; }
+        .left { grid-area: left; background: #27ae60; }
+        
+        .main { grid-area: main; background: #3498db; color: white; min-height: 400px;}
+        
+        .right { grid-area: right; background: #f39c12; }
+        .low { grid-area: low; background: #27ae60; }
+        .footer { grid-area: footer; background: #2980b9; color: white; }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "header"
+                    "banner"
+                    "left"
+                    "main"
+                    "right"
+                    "low"
+                    "footer";
+                grid-template-rows: auto;
+            }
+            
+            .container > div { min-height: 80px; }
+            .main { min-height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="banner">Banner</div>
+        <div class="left">Left Aside</div>
+        <div class="main">Main Content <br> (Width: Auto, Height: Auto)</div>
+        <div class="right">Right Aside</div>
+        <div class="low">Low Content</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
